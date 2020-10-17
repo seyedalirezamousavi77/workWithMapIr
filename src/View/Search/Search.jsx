@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { Container, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Container, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from 'reactstrap'
 import axios from 'axios';
+
+import CreateMap from '../../Component/CreateMap/CreateMap'
+import './Search.css'
+import searchIcon from '../../images/search.svg'
+
+function isEmpty(obj) {
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
 function Search() {
     const [search, setSearch] = useState("")
     const [responseSearch, setResponseSearch] = useState([])
     const [pending, setPending] = useState(true)
     const [modal, setModal] = useState(false);
+    const [modalItem, setModalItem] = useState({})
+
     const toggle = () => setModal(!modal);
+
     useEffect(() => {
         axios({
             method: 'POST',
@@ -21,50 +36,69 @@ function Search() {
             .then((response) => {
                 setResponseSearch(response.data.value)
                 setPending(false)
-                console.log(responseSearch)
             }).catch(error => {
+                setResponseSearch([])
                 console.log(error)
             })
     }, [search])
     const handleChange = (event) => {
         setSearch(event.target.value)
     }
+    const handleModal = (item) => {
+        toggle();
+        setModalItem(item)
+    }
     return (
-        <Container>
-            <FormGroup>
-                <Label for="exampleSearch">Search</Label>
-                <Input
-                    type="search"
-                    name="search"
-                    value={search}
-                    onChange={handleChange}
-                    id="search"
-                    placeholder="search placeholder"
-                />
-            </FormGroup>
+        <Container fluid className="p-0 bg-search">
+            <div className="with-search mx-auto">
+                <FormGroup className="pt-5">
+                    <Input
+                        className="mx-auto input-search"
+                        type="search"
+                        name="search"
+                        value={search}
+                        onChange={handleChange}
+                        id="search"
+                        placeholder="لطفا نشانی محل مورد نظر را جستجو نمایید"
+                    />
+                    <img src={searchIcon} alt="" className={search === "" ? "icon-search" : "d-none"} />
+                </FormGroup>
+                <div className="py-3">
+                    {
+                        responseSearch.length !== 0 &&
+                        responseSearch.map((item, index) =>
+                            <div key={index} className="mx-auto text-right px-3 py-2 box-response-search" onClick={() => handleModal(item)}>
+                                <h4 className="title-response-search">
+                                    {item.title}
+                                </h4>
+                                <p className="address-response-search">
+                                    {item.address}
+                                </p>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
             {
-                responseSearch.length !== 0 &&
-                responseSearch.map((item, index) =>
-                    <div key={index} onClick={toggle}>
-                        <h4>
-                            {item.address}
-                        </h4>
-                        <p>
-                            {item.title}
-                        </p>
-                    </div>
-                )
+                !isEmpty(modalItem) &&
+                <Modal isOpen={modal} size="xl" toggle={toggle} className="mx-auto my-auto d-flex align-items-center h-100">
+                    <ModalBody>
+                        <Row>
+                            <Col xs="12" lg="6" className="modal-content-search">
+                                <h4 className="title-response-search">محل جستجو شده : {modalItem.title}</h4>
+                                <p className="my-4">استان : {modalItem.province}</p>
+                                <p className="my-4">شهرستان : {modalItem.county}</p>
+                                <p className="my-4">آدرس محل : {modalItem.address}</p>
+                            </Col>
+                            <Col xs="12" lg="6">
+                                <CreateMap lngLatProps={modalItem.geom.coordinates} />
+                            </Col>
+                        </Row>
+                    </ModalBody>
+                </Modal>
+
             }
-            <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ModalBody>
-                <ModalFooter>
-                    <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
-                </ModalFooter>
-            </Modal>
+
         </Container>
     )
 }
