@@ -7,7 +7,7 @@ import './Home.css'
 function Home() {
     return (
         <Container fluid className="p-0 m-0 bg-home">
-            <Container>
+            <Container className="mx-auto">
                 <Row className="box-button-home">
                     <Col xs={12} lg={6} className="d-flex justify-content-center py-3">
                         <Button className="button-home">
