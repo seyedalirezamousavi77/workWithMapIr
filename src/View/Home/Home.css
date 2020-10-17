@@ -1,0 +1,44 @@
+.bg-home{
+    background-image: url('../../images/bg-home.png');
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.button-home{
+    width: 50% !important;
+    border-radius: .5rem !important;
+    background-color:  #48d1ff !important;
+    color: #063bbc !important;
+    border-color: transparent !important;
+    transition: .5s all ease !important;
+    padding: 1rem 0 !important;
+}
+.button-home:hover , .button-home:focus{
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .5);
+}
+.button-home a{
+    padding: 1rem 4rem;
+    color: #063bbc !important;
+}
+.button-home a:hover{
+    text-decoration: none !important;
+}
+.box-button-home{
+    padding-top: 5rem;
+}
+.box-text-home{
+    background-color: #063bbc;
+    color: #fff;
+    width: fit-content;
+    margin: 5rem auto;
+    border-radius: 1rem;
+}
+@media only screen and (max-width: 992px) {
+    .bg-home{
+        background-size: cover;
+    }
+    .button-home{
+        width: 95% !important;
+    }
+}
