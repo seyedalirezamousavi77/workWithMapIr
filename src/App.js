@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Map from './View/Map/Map'
+import ShowMap from './View/ShowMap/ShowMap'
 import Search from './View/Search/Search'
 import Home from './View/Home/Home'
 
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/map">
-          <Map />
+          <ShowMap />
         </Route>
         <Route exact path="/search">
           <Search />
