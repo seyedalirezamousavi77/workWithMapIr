@@ -34,6 +34,13 @@
     margin: 5rem auto !important;
     border-radius: 1rem !important;
 }
+
+/* this class is for show map */
+.handle-w-h{
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
 @media only screen and (max-width: 992px) {
     .bg-home{
         background-size: cover;
