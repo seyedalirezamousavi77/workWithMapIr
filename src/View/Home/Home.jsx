@@ -11,12 +11,12 @@ function Home() {
                 <Row className="box-button-home">
                     <Col xs={12} lg={6} className="d-flex justify-content-center py-3">
                         <Button className="button-home">
-                            <Link to="./map">نمایش نقشه</Link>
+                            <Link to="/map">نمایش نقشه</Link>
                         </Button>
                     </Col>
                     <Col xs={12} lg={6} className="d-flex justify-content-center py-3">
                         <Button className="button-home">
-                            <Link to="./search">جستجوی نشانی</Link>
+                            <Link to="/search">جستجوی نشانی</Link>
                         </Button>
                     </Col>
                 </Row>
