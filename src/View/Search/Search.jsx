@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from 'reactstrap'
+import { Container, FormGroup, Input, Modal, ModalBody, Row, Col } from 'reactstrap'
 import axios from 'axios';
 
 import CreateMap from '../../Component/CreateMap/CreateMap'
