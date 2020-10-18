@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a909ef3fe96b0a410282ec27acfbb20d",
+    "revision": "1f411a0c13b8bc32d3ea30445d692117",
     "url": "/workWithMapIr/index.html"
   },
   {
-    "revision": "e4d4d496c54971dee308",
+    "revision": "d616c138e508655273e2",
     "url": "/workWithMapIr/static/css/2.c1233e28.chunk.css"
   },
   {
-    "revision": "3f666e192d73d2fa51ee",
+    "revision": "b86bc271d67dad4cc8df",
     "url": "/workWithMapIr/static/css/main.51b38f09.chunk.css"
   },
   {
-    "revision": "e4d4d496c54971dee308",
-    "url": "/workWithMapIr/static/js/2.59312bb0.chunk.js"
+    "revision": "d616c138e508655273e2",
+    "url": "/workWithMapIr/static/js/2.c6786a2b.chunk.js"
   },
   {
     "revision": "29eb69a08ea4198f7b46e1db8a3d5045",
-    "url": "/workWithMapIr/static/js/2.59312bb0.chunk.js.LICENSE.txt"
+    "url": "/workWithMapIr/static/js/2.c6786a2b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3f666e192d73d2fa51ee",
-    "url": "/workWithMapIr/static/js/main.93dd827d.chunk.js"
+    "revision": "b86bc271d67dad4cc8df",
+    "url": "/workWithMapIr/static/js/main.236979b2.chunk.js"
   },
   {
     "revision": "8cf5c19ef7d872cd5d4a",
