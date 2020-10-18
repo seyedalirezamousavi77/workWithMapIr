@@ -9,15 +9,15 @@ function Home() {
         <Container fluid className="p-0 m-0 bg-home">
             <Container className="mx-auto">
                 <Row className="box-button-home">
-                    <Col xs={12} lg={6} className="d-flex justify-content-center py-3">
-                        <Button className="button-home">
-                            <Link to="/map">نمایش نقشه</Link>
-                        </Button>
+                    <Col xs={12} lg={6} className="py-3">
+                        <Link to="/map" className="d-flex justify-content-center "><Button className="button-home">
+                            نمایش نقشه
+                        </Button></Link>
                     </Col>
-                    <Col xs={12} lg={6} className="d-flex justify-content-center py-3">
-                        <Button className="button-home">
-                            <Link to="/search">جستجوی نشانی</Link>
-                        </Button>
+                    <Col xs={12} lg={6} className="py-3">
+                        <Link to="/search" className="d-flex justify-content-center "><Button className="button-home">
+                            جستجوی نشانی
+                        </Button></Link>
                     </Col>
                 </Row>
 

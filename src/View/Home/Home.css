@@ -17,11 +17,11 @@
 .button-home:hover , .button-home:focus{
     box-shadow: 1px 1px 20px rgba(0, 0, 0, .5) !important;
 }
-.button-home a{
-    padding: 1rem 4rem;
+.box-button-home a{
+    width: 100% !important;
     color: #063bbc !important;
 }
-.button-home a:hover{
+.box-button-home a:hover{
     text-decoration: none !important;
 }
 .box-button-home{
