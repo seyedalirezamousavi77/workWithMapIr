@@ -24,7 +24,7 @@ function CreateMap({ lngLatProps }) {
     }
     useEffect(() => {
         setPending(true)
-        axios.get(`https://map.ir/reverse/fast-reverse?lat=${lngLat[1]}&lon=${lngLat[0]}`, {
+        axios.get(`https://map.ir/fast-reverse?lat=${lngLat[1]}&lon=${lngLat[0]}`, {
             headers: { "x-api-key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI2ZmJkNTk2ODZiOWM1NzI0OWYyMTQ2NTJiOWVhMmExNTNlMGNjNjVmYjMwOWQxNGM0ZjhhM2U5OWU1MjQ5OTUwMzllMmIyY2UzOTIwNTU2In0.eyJhdWQiOiIxMTIxOCIsImp0aSI6ImI2ZmJkNTk2ODZiOWM1NzI0OWYyMTQ2NTJiOWVhMmExNTNlMGNjNjVmYjMwOWQxNGM0ZjhhM2U5OWU1MjQ5OTUwMzllMmIyY2UzOTIwNTU2IiwiaWF0IjoxNjAyODU1MjgxLCJuYmYiOjE2MDI4NTUyODEsImV4cCI6MTYwNTM2MDg4MSwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.Wuhxcn9AD01LhCKBCjzzDOWfP4HUVPsY951dywe6wJJTYcpTBPLKdZX62S7nKD3ZX72pqxn0IAL3GR20v1NtZGIN8smTHACWT7cytHQrmXdSPim8he1K2AFqbjPp993K8o0WUO9CxT79dWToAe24MlYhfTiH3EM-2krwgdULu2BXtMWr9GLcXCckPfqe4o-tU9mjtU812bsBEK4DRgvTRhn0p5QMaZqNJpoBwzx5O07_RvYm5X1Xxt-ollC78wrkzUKFxmi-q2sEcrkQWFeB9oMJwedABT0de6XWtjoXZgdbUoYST8FtRpPZo1vPa_l7Pf9jHQFyEUxFF9wDUP8iag" }
         }).then(res => {
             setAddress(res.data)
