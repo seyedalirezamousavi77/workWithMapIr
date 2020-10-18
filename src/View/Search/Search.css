@@ -55,6 +55,9 @@
     font-family: yekan !important;
 }
 @media only screen and (max-width: 992px) {
+    .bg-search{
+        background-image: url('../../images/search-bg-mob.jpg');
+    }
     .with-search{
         width: 95% !important;
     }
